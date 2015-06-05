@@ -118,7 +118,7 @@ public class ScoringActivity extends ActionBarActivity implements View.OnClickLi
 
     //Horrible function for successively writing to the textViews
     public void scoreWriter(Integer result) {
-
+        if (count < 6) {
         switch (count) {
             case 0:
                 textViewS1.setText(String.valueOf(result));
@@ -141,7 +141,7 @@ public class ScoringActivity extends ActionBarActivity implements View.OnClickLi
             default:
                 break;
         }
-        if (count < 5) {
+
             count++;
             total = total + result;
             textView_totalS1.setText(String.valueOf(total));

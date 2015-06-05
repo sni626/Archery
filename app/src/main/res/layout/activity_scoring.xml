@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_column="0"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_row="0"
+        android:layout_weight="0.01"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textViewS1"
+            style="@style/score_row_cell" />
+
+        <TextView
+            android:id="@+id/textViewS2"
+            style="@style/score_row_cell" />
+
+        <TextView
+            android:id="@+id/textViewS3"
+            style="@style/score_row_cell" />
+
+        <TextView
+            android:id="@+id/textViewS4"
+            style="@style/score_row_cell" />
+
+        <TextView
+            android:id="@+id/textViewS5"
+            style="@style/score_row_cell" />
+
+        <TextView
+            android:id="@+id/textViewS6"
+            style="@style/score_row_cell" />
+
+        <TextView
+            android:id="@+id/textView_totalS1"
+            style="@style/score_row_cell_total1" />
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button_rescore"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/linearLayout"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="18dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="18dp"
+        android:layout_weight="0.01"
+        android:onClick="onClick"
+        android:text="@string/button_rescore" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignEnd="@+id/button_rescore"
+        android:layout_alignLeft="@+id/button_rescore"
+        android:layout_alignRight="@+id/button_rescore"
+        android:layout_alignStart="@+id/button_rescore"
+        android:layout_below="@+id/button_rescore"
+        android:layout_marginTop="18dp"
+        android:stretchColumns="1">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/button_X"
+                style="@style/scoring_button"
+                android:text="X" />
+
+            <Button
+                android:id="@+id/button10"
+                style="@style/scoring_button"
+                android:layout_weight="1"
+                android:onClick="onClick"
+                android:text="10" />
+
+            <Button
+                android:id="@+id/button9"
+                style="@style/scoring_button"
+                android:text="9" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/button8"
+                style="@style/scoring_button"
+                android:text="8" />
+
+            <Button
+                android:id="@+id/button7"
+                style="@style/scoring_button"
+                android:text="7" />
+
+            <Button
+                android:id="@+id/button6"
+                style="@style/scoring_button"
+                android:text="6" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/button5"
+                style="@style/scoring_button"
+                android:text="5" />
+
+            <Button
+                android:id="@+id/button4"
+                style="@style/scoring_button"
+                android:text="4" />
+
+            <Button
+                android:id="@+id/button3"
+                style="@style/scoring_button"
+                android:text="3" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/button2"
+                style="@style/scoring_button"
+                android:text="2" />
+
+            <Button
+                android:id="@+id/button1"
+                style="@style/scoring_button"
+                android:text="1" />
+
+            <Button
+                android:id="@+id/button_M"
+                style="@style/scoring_button"
+                android:text="@string/score_miss" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/button_save"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/buttonTable"
+                android:layout_column="1"
+                android:layout_marginTop="18dp"
+                android:layout_weight="0.01"
+
+                android:text="@string/button_save" />
+        </TableRow>
+    </TableLayout>
+</RelativeLayout>

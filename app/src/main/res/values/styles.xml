@@ -1,0 +1,39 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+    </style>
+
+
+    <style name="score_row_cell">
+        <item name="android:textAppearance">?android:textAppearanceMedium</item>
+        <item name="android:textSize">14.0dp</item>
+        <item name="android:textColor">#000</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/table_cell_bg</item>
+        <item name="android:padding">2.0dip</item>
+        <item name="android:layout_width">0.0dip</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_margin">1.0dip</item>
+        <item name="android:layout_weight">12.5</item>
+    </style>
+
+    <style name="score_row_cell_total1" parent="score_row_cell">
+        <item name="android:background">@drawable/table_total1_cell_bg</item>
+        <item name="android:textColor">#fff</item>
+    </style>
+
+    <style name="score_row_cell_total2" parent="score_row_cell">
+        <item name="android:background">@drawable/table_total2_cell_bg</item>
+        <item name="android:textColor">#fff</item>
+    </style>
+
+    <style name="scoring_button">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:onClick">onClick</item>
+    </style>
+
+</resources>

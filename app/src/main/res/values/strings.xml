@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Archery</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="button_next">Next</string>
+    <string name="button_save">Save</string>
+    <string name="button_rescore">Rescore</string>
+
+
+    <string name="title_activity_target">TargetActivity</string>
+    <string name="title_activity_table">TableActivity</string>
+    <string name="title_activity_scoring">Enter results</string>
+    <string name="title_activity_archer_data">Enter your data</string>
+
+    <string name="gender_male">Male</string>
+    <string name="gender_female">Female</string>
+
+    <string name="bow_type_recurve">Recurve</string>
+    <string name="bow_type_block">Block</string>
+
+    <string name="score_miss">Miss</string>
+
+    <string name="hello_world">Hello world!</string>
+</resources>

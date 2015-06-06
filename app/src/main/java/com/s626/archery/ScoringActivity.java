@@ -14,6 +14,7 @@ public class ScoringActivity extends ActionBarActivity implements View.OnClickLi
     String arrows[];
     Integer count = 0;
     Integer total = 0;
+    Integer numberOfArrows = 6;
 
 
     TextView textViewS1, textViewS2, textViewS3,
@@ -118,7 +119,7 @@ public class ScoringActivity extends ActionBarActivity implements View.OnClickLi
 
     //Horrible function for successively writing to the textViews
     public void scoreWriter(Integer result) {
-        if (count < 6) {
+        if (count < numberOfArrows) {
         switch (count) {
             case 0:
                 textViewS1.setText(String.valueOf(result));

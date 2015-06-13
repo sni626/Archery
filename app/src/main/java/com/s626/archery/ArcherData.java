@@ -1,8 +1,6 @@
 package com.s626.archery;
 
-/**
- * Created by 626 on 03.06.2015.
- */
+
 public class ArcherData {
     private String name = "";
     private String age = "";

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Подсчёт результатов</string>
+
+    <string name="action_settings">Настройки</string>
+
+    <string name="button_next">Следующий</string>
+    <string name="button_save">Сохранить</string>
+    <string name="button_rescore">Отменить</string>
+    <string name="button_add">Добавить</string>
+    <string name="button_read">Считать</string>
+    <string name="button_clear">Очистить</string>
+    <string name="button_activity_table">Запись результатов</string>
+
+
+    <string name="title_activity_target">TargetActivity</string>
+    <string name="title_activity_table">Таблица результатов</string>
+    <string name="title_activity_scoring">Введите результаты</string>
+    <string name="title_activity_view_results">Просмотр результатов</string>
+    <string name="title_activity_archer_data">Введите ваши данные</string>
+
+    <string name="gender_male">Мужчина</string>
+    <string name="gender_female">Женщина</string>
+
+    <string name="bow_type_recurve">Рекурсивный</string>
+    <string name="bow_type_block">Блочный</string>
+
+    <string name="score_miss">Промах</string>
+    <string name="enter_id">Введите ID</string>
+
+    <string name="hello_world">Hello world!</string>
+
+</resources>

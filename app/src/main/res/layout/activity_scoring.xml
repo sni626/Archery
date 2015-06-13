@@ -71,7 +71,8 @@
         android:layout_alignStart="@+id/button_rescore"
         android:layout_below="@+id/button_rescore"
         android:layout_marginTop="18dp"
-        android:stretchColumns="1">
+        android:stretchColumns="1"
+        android:layout_alignParentBottom="true">
 
         <TableRow
             android:layout_width="match_parent"
@@ -174,6 +175,7 @@
                 android:layout_column="1"
                 android:layout_marginTop="18dp"
                 android:layout_weight="0.01"
+                android:onClick="onClick"
 
                 android:text="@string/button_save" />
         </TableRow>

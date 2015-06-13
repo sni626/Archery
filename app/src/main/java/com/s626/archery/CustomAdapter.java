@@ -10,9 +10,6 @@ import android.widget.TextView;
 
 import java.util.Vector;
 
-/**
- * Created by 626 on 31.05.2015.
- */
 public class CustomAdapter extends ArrayAdapter<ListRow6> {
     Context context;
     int layoutResourceId;
@@ -36,6 +33,7 @@ public class CustomAdapter extends ArrayAdapter<ListRow6> {
     public View getView(int position, View convertView, ViewGroup parent) {
         View row = convertView;
         StringReaderHolder holder;
+
         if (row == null) {
             LayoutInflater inflater = ((Activity) context).getLayoutInflater();
             row = inflater.inflate(layoutResourceId, parent, false);

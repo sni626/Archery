@@ -1,6 +1,7 @@
 package com.s626.archery;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -8,20 +9,19 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class ScoringActivity extends ActionBarActivity implements View.OnClickListener {
-    String arrows[];
+    final Integer numberOfArrows = 6;
+
     Integer count = 0;
     Integer total = 0;
-    Integer numberOfArrows = 6;
-
+    Integer previousResult;
+    String[] arrowsArray = {" ", " ", " ", " ", " ", " ", " "};
 
     TextView textViewS1, textViewS2, textViewS3,
             textViewS4, textViewS5, textViewS6, textView_totalS1;
-    Button button1, button2, button3, button4, button5,
-            button6, button7, button8, button9, button10,
-            button_M, button_X;
 
 
     @Override
@@ -37,40 +37,6 @@ public class ScoringActivity extends ActionBarActivity implements View.OnClickLi
         textViewS6 = (TextView) findViewById(R.id.textViewS6);
         textView_totalS1 = (TextView) findViewById(R.id.textView_totalS1);
 
-//        button1 = (Button)findViewById(R.id.button1);
-//        button2 = (Button)findViewById(R.id.button2);
-//        button3 = (Button)findViewById(R.id.button3);
-//        button4 = (Button)findViewById(R.id.button4);
-//        button5 = (Button)findViewById(R.id.button5);
-//        button6 = (Button)findViewById(R.id.button6);
-//        button7 = (Button)findViewById(R.id.button7);
-//        button8 = (Button)findViewById(R.id.button8);
-//        button9 = (Button)findViewById(R.id.button9);
-//        button10 = (Button)findViewById(R.id.button10);
-//        button_M = (Button)findViewById(R.id.button_M);
-//        button_X = (Button)findViewById(R.id.button_X);
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_scoring, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -112,6 +78,16 @@ public class ScoringActivity extends ActionBarActivity implements View.OnClickLi
             case R.id.button_X:
                 scoreWriter(10);
                 break;
+            case R.id.button_rescore:
+                if (count > 0)
+                scoreRemover();
+                break;
+            case R.id.button_save:
+                Intent resultIntent = new Intent();
+                resultIntent.putExtra("RETURN_ARROWS", arrowsArray);
+                setResult(Activity.RESULT_OK, resultIntent);
+                finish();
+                break;
             default:
                 break;
         }
@@ -119,33 +95,87 @@ public class ScoringActivity extends ActionBarActivity implements View.OnClickLi
 
     //Horrible function for successively writing to the textViews
     public void scoreWriter(Integer result) {
+        String resultString;
+
+        switch (result){
+            case 0:
+                resultString = "0";
+                break;
+            case 11:
+                resultString = "X";
+                result--;
+                break;
+            default:
+                resultString = String.valueOf(result);
+                break;
+        }
+
         if (count < numberOfArrows) {
         switch (count) {
             case 0:
-                textViewS1.setText(String.valueOf(result));
+                textViewS1.setText(resultString);
                 break;
             case 1:
-                textViewS2.setText(String.valueOf(result));
+                textViewS2.setText(resultString);
                 break;
             case 2:
-                textViewS3.setText(String.valueOf(result));
+                textViewS3.setText(resultString);
                 break;
             case 3:
-                textViewS4.setText(String.valueOf(result));
+                textViewS4.setText(resultString);
                 break;
             case 4:
-                textViewS5.setText(String.valueOf(result));
+                textViewS5.setText(resultString);
                 break;
             case 5:
-                textViewS6.setText(String.valueOf(result));
+                textViewS6.setText(resultString);
                 break;
             default:
                 break;
         }
 
+            arrowsArray[count] = resultString;
             count++;
             total = total + result;
+            previousResult = result;
             textView_totalS1.setText(String.valueOf(total));
+
         }
+    }
+
+    public void scoreRemover(){
+        count--;
+        total = total - previousResult;
+        textView_totalS1.setText(String.valueOf(total));
+        arrowsArray[count] = " ";
+        switch (count) {
+            case 0:
+                previousResult = 0;
+                textViewS1.setText("");
+                break;
+            case 1:
+                previousResult = Integer.parseInt(textViewS1.getText().toString());
+                textViewS2.setText("");
+                break;
+            case 2:
+                previousResult = Integer.parseInt(textViewS2.getText().toString());
+                textViewS3.setText("");
+                break;
+            case 3:
+                previousResult = Integer.parseInt(textViewS3.getText().toString());
+                textViewS4.setText("");
+                break;
+            case 4:
+                previousResult = Integer.parseInt(textViewS4.getText().toString());
+                textViewS5.setText("");
+                break;
+            case 5:
+                previousResult = Integer.parseInt(textViewS5.getText().toString());
+                textViewS6.setText("");
+                break;
+            default:
+                break;
+        }
+
     }
 }

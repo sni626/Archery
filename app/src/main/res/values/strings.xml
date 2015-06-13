@@ -6,11 +6,16 @@
     <string name="button_next">Next</string>
     <string name="button_save">Save</string>
     <string name="button_rescore">Rescore</string>
+    <string name="button_add">Add</string>
+    <string name="button_read">Read</string>
+    <string name="button_clear">Clear</string>
+    <string name="button_activity_table">Open scoring table</string>
 
 
     <string name="title_activity_target">TargetActivity</string>
     <string name="title_activity_table">TableActivity</string>
     <string name="title_activity_scoring">Enter results</string>
+    <string name="title_activity_view_results">ViewResults</string>
     <string name="title_activity_archer_data">Enter your data</string>
 
     <string name="gender_male">Male</string>
@@ -20,6 +25,8 @@
     <string name="bow_type_block">Block</string>
 
     <string name="score_miss">Miss</string>
+    <string name="enter_id">Enter ID</string>
 
     <string name="hello_world">Hello world!</string>
+
 </resources>
